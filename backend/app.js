@@ -8,6 +8,8 @@ var excelRouter = require("./routes/excel");
 
 var app = express();
 
+app.set("views", __dirname + "/views");
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
