@@ -4,6 +4,7 @@ import NotFound from "../pages/NotFoundPage.vue";
 
 // Admin pages
 import Overview from "../pages/Overview.vue";
+import ExcelDownload from "../pages/ExcelDownload.vue";
 import UserProfile from "../pages/UserProfile.vue";
 import TableList from "../pages/TableList.vue";
 import Typography from "../pages/Typography.vue";
@@ -27,6 +28,11 @@ const routes = [
         path: "methodFactory",
         name: "MethodFactory",
         component: Overview,
+      },
+      {
+        path: "excelDownload",
+        name: "ExcelDownload",
+        component: ExcelDownload,
       },
       {
         path: "overview",

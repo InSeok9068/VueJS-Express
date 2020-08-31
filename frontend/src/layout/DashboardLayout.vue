@@ -6,6 +6,10 @@
         <i class="nc-icon nc-zoom-split"></i>
         <p>Method Factory</p>
       </sidebar-link>
+      <sidebar-link to="/admin/excelDownload">
+        <i class="nc-icon nc-cloud-download-93"></i>
+        <p>Excel Download</p>
+      </sidebar-link>
       <sidebar-link to="/admin/overview">
         <i class="nc-icon nc-chart-pie-35"></i>
         <p>Dashboard</p>
