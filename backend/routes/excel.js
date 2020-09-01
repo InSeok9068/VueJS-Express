@@ -5,6 +5,11 @@ const xlsx = require("xlsx");
 const book = xlsx.utils.book_new();
 
 const axios = require("axios");
+const fs = require("fs");
+
+const secretJsonData = JSON.parse(
+  fs.readFileSync("./secret/secret.json", "utf8")
+);
 
 /* GET users listing. */
 router.post("/", function (req, res, next) {
@@ -12,13 +17,13 @@ router.post("/", function (req, res, next) {
     url: "https://openapi.naver.com/v1/papago/n2mt",
     method: "post",
     headers: {
-      "X-Naver-Client-Id": "NLbQtjQTFrdtrLLb6_t1",
-      "X-Naver-Client-Secret": "QgTQ1mXr0v",
+      "X-Naver-Client-Id": secretJsonData.papago["X-Naver-Client-Id"],
+      "X-Naver-Client-Secret": secretJsonData.papago["X-Naver-Client-Secret"],
     },
     data: {
       source: "ko",
       target: "ja",
-      text: "공부 열심히 하는 모습이 멋있어 ~~",
+      text: "현경아~~~~",
     },
   }).then(function (response, body) {
     res.writeHead(200, { "Content-Type": "text/json;charset=utf-8" });

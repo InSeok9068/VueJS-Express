@@ -69,7 +69,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-md-3 col-md-offset-1">
-              <button class="btn btn-default btn-block" @click="notifyVue('top', 'left')">Top Left</button>
+              <button class="btn btn-default btn-block" @click="notifyVue('top', 'left')">x</button>
             </div>
             <div class="col-md-3">
               <button class="btn btn-default btn-block" @click="notifyVue('top', 'center')">Top Center</button>
