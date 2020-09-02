@@ -2,6 +2,10 @@
   <div class="wrapper">
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
+      <sidebar-link to="/admin/overview">
+        <i class="nc-icon nc-chart-pie-35"></i>
+        <p>Dashboard</p>
+      </sidebar-link>
       <sidebar-link to="/admin/methodFactory">
         <i class="nc-icon nc-zoom-split"></i>
         <p>Method Factory</p>
@@ -9,10 +13,6 @@
       <sidebar-link to="/admin/excelDownload">
         <i class="nc-icon nc-cloud-download-93"></i>
         <p>Excel Download</p>
-      </sidebar-link>
-      <sidebar-link to="/admin/overview">
-        <i class="nc-icon nc-chart-pie-35"></i>
-        <p>Dashboard</p>
       </sidebar-link>
       <sidebar-link to="/admin/user">
         <i class="nc-icon nc-circle-09"></i>

@@ -4,6 +4,7 @@ import NotFound from "../pages/NotFoundPage.vue";
 
 // Admin pages
 import Overview from "../pages/Overview.vue";
+import MethodFactory from "../pages/MethodFactory.vue";
 import ExcelDownload from "../pages/ExcelDownload.vue";
 import UserProfile from "../pages/UserProfile.vue";
 import TableList from "../pages/TableList.vue";
@@ -25,19 +26,19 @@ const routes = [
     redirect: "/admin/overview",
     children: [
       {
+        path: "overview",
+        name: "Overview",
+        component: Overview,
+      },
+      {
         path: "methodFactory",
         name: "MethodFactory",
-        component: Overview,
+        component: MethodFactory,
       },
       {
         path: "excelDownload",
         name: "ExcelDownload",
         component: ExcelDownload,
-      },
-      {
-        path: "overview",
-        name: "Overview",
-        component: Overview,
       },
       {
         path: "user",
