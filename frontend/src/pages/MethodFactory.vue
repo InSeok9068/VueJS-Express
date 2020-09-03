@@ -2,18 +2,14 @@
   <div class="content">
     <div class="container-fluid">
       <card>
-        <base-dropdown title="Dropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something</a>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </base-dropdown>
+        <base-select
+          v-model="preselect_value"
+          :items="items"
+          :input_id="'my_selectbox'"
+          @input="value => { preselect_value = value }"
+        ></base-select>
         <base-input type="text"
-                  label="Company"
                   :disabled="false"
-                  placeholder="Light dashboard"
                   >
         </base-input>
       </card>
@@ -23,9 +19,15 @@
 <script>
 
   export default {
-    components: {
-    },
     data () {
+      return {
+        items : [
+          "1번",
+          "2번",
+          "3번"
+        ],
+        preselect_value : "테스트"
+      }
     },
     methods: {
     }
