@@ -2,16 +2,21 @@
   <div class="content">
     <div class="container-fluid">
       <card>
-        <base-select
-          v-model="preselect_value"
-          :items="items"
-          :input_id="'my_selectbox'"
-          @input="value => { preselect_value = value }"
-        ></base-select>
-        <base-input type="text"
-                  :disabled="false"
-                  >
-        </base-input>
+        <form>
+        <div class="row">
+          <div class="col-md-3">
+            <base-select
+              v-model="preselect_value"
+              :items="items"
+              :input_id="'my_selectbox'"
+              @input="value => { preselect_value = value }"
+            ></base-select>
+          </div>
+          <div class="col-md-3">
+            <base-input type="text">
+            </base-input>
+          </div>
+        </div>
       </card>
     </div>
   </div>
