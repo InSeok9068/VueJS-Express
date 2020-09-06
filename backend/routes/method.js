@@ -4,9 +4,14 @@ var router = express.Router();
 const axios = require("axios");
 const fs = require("fs");
 
+const secretJsonData = JSON.parse(
+  fs.readFileSync("./secret/secret.json", "utf8")
+);
+
 /* GET users listing. */
 router.get("/name", function (req, res, next) {
-  console.log(req);
+  console.log("테스트");
+  console.log(req.params);
   axios({
     url: "https://openapi.naver.com/v1/papago/n2mt",
     method: "post",

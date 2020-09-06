@@ -50,14 +50,12 @@
     },
     methods: {
       onSubmit(){
-        this.$http.get('/api/method/name', 
-          {
-            param: {
-              option : this.preselect_value,
-              option : this.strText
-            }
+        this.$http.get('/api/method/name', {
+          params: {
+            option : this.preselect_value,
+            text111 : this.strText
           }
-        ).then((response) => {
+        }).then((response) => {
           console.log(response)
         })
       }
