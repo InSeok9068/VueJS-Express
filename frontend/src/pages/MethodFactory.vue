@@ -2,7 +2,7 @@
   <div class="content">
     <div class="container-fluid">
       <card>
-        <form>
+        <form @submit.prevent="onSubmit">
         <div class="row">
           <div class="col-md-3">
             <base-select
@@ -13,7 +13,17 @@
             ></base-select>
           </div>
           <div class="col-md-3">
-            <base-input type="text">
+            <base-input type="text" v-model="strText">
+            </base-input>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Make</button>
+          </div>
+          <div class="col-md-1">
+            <p>=</p>
+          </div>
+          <div class="col-md-3">
+            <base-input v-model="resultText">
             </base-input>
           </div>
         </div>
@@ -28,14 +38,27 @@
     data () {
       return {
         items : [
-          "1번",
-          "2번",
-          "3번"
+          "Select",
+          "Insert",
+          "Update",
+          "Delete",
         ],
-        preselect_value : "테스트"
+        preselect_value : "",
+        strText : "",
+        resultText : ""
       }
     },
     methods: {
+      onSubmit(){
+        this.$http.get('/api/method/name', {
+          params: {
+            option : this.preselect_value,
+            text111 : this.strText
+          }
+        }).then((response) => {
+          console.log(response)
+        })
+      }
     }
   }
 

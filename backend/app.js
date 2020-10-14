@@ -4,10 +4,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var excelRouter = require("./routes/excel");
+var methodRouter = require("./routes/method");
 
 var app = express();
 
-app.set("views", __dirname + "/views");
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -16,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/excelDownload", excelRouter);
+app.use("/api/method", methodRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
