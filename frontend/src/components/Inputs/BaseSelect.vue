@@ -5,14 +5,14 @@
           v-bind:id="input_id"
           v-on:input="updateValue($event.target.value)"
     >
-        <option v-for="(item, index) in items" :value="index">{{ item }}</option>
+        <option v-for="(item, index) in items" :key="index">{{ item }}</option>
     </select>
 </template>
 
 <script>
     export default {
         name: "base-select",
-        data() {
+        data() { 
             return {
                 //
             };

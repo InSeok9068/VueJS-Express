@@ -11,7 +11,7 @@ const secretJsonData = JSON.parse(
 /* GET users listing. */
 router.get("/name", function (req, res, next) {
   console.log("테스트");
-  console.log(req.params);
+  console.log(req.query);
   axios({
     url: "https://openapi.naver.com/v1/papago/n2mt",
     method: "post",
@@ -21,13 +21,12 @@ router.get("/name", function (req, res, next) {
     },
     data: {
       source: "ko",
-      target: "ja",
-      text: "현경아~~~~",
+      target: "en",
+      text: req.query.text,
     },
   }).then(function (response, body) {
-    res.writeHead(200, { "Content-Type": "text/json;charset=utf-8" });
-    console.log(response.data.message.result.translatedText);
-    res.end(body);
+    res.json(response.data.message.result.translatedText);
+    res.end();
   });
 });
 

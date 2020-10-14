@@ -53,10 +53,10 @@
         this.$http.get('/api/method/name', {
           params: {
             option : this.preselect_value,
-            text111 : this.strText
+            text : this.strText
           }
         }).then((response) => {
-          console.log(response)
+          this.resultText = response.data;
         })
       }
     }
