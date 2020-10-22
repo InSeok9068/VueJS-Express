@@ -10,8 +10,6 @@ const secretJsonData = JSON.parse(
 
 /* GET users listing. */
 router.get("/name", function (req, res, next) {
-  console.log("테스트");
-  console.log(req.query);
   axios({
     url: "https://openapi.naver.com/v1/papago/n2mt",
     method: "post",
@@ -25,6 +23,8 @@ router.get("/name", function (req, res, next) {
       text: req.query.text,
     },
   }).then(function (response, body) {
+    let result = "";
+    switch(req.query.)
     res.json(response.data.message.result.translatedText);
     res.end();
   });
